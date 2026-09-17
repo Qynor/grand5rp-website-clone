@@ -7,8 +7,8 @@
       <LanguageSwitcher />
     </div>
     <div class="header__menu">
-      <RouterLink v-for="item in items" :to="item.value" class="nav__item">
-        {{ item.label }}
+      <RouterLink v-for="item in nav__items" :to="item.value" class="nav__item">
+        {{ t(item.label) }}
       </RouterLink>
     </div>
     <div class="header__total">
@@ -27,17 +27,13 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import LanguageSwitcher from './LanguageSwitcher.vue';
 import Icon from './Icon.vue';
+import { nav__items } from '~/config/navigation.ts';
 
 const { t } = useI18n();
 
-const items = [
-  { label: t("header.navigation.how_to_start_playing"), value: "#howtostart" },
-  { label: t("header.navigation.forum"), value: "" },
-  { label: t("header.navigation.technical_support"), value: "" },
-];
 const props = defineProps({
   open: Boolean
 });
@@ -50,7 +46,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 999;
   background: #F1F1F1;
   box-shadow: 0px 8px 24px rgba(149, 149, 149, 0.2);
   align-items: center;

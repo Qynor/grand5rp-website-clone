@@ -18,6 +18,10 @@ body {
   font-family: 'Akrobat';
 }
 
+.overflow {
+  overflow: hidden;
+}
+
 /* Thin */
 @font-face {
   font-family: 'Akrobat';
