@@ -1,0 +1,23 @@
+{
+  "name": "gta5-grand-com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.16.0",
+    "@nuxtjs/i18n": "^10.6.0",
+    "@vueuse/core": "^14.4.0",
+    "better-sqlite3": "^13.0.3",
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "vite-svg-loader": "^5.1.3"
+  }
+}
