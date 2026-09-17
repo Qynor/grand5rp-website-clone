@@ -1,9 +1,13 @@
 {
-  "navigation": {
-    "how_to_start_playing": "How to start playing?",
-    "forum": "FORUM",
-    "technical_support": "TECHNICAL SUPPORT",
-    "total_online": "Total Online"
+  "header": {
+    "default": {
+      "total_online": "Total Online"
+    },
+    "navigation": {
+      "how_to_start_playing": "How to start playing?",
+      "forum": "FORUM",
+      "technical_support": "TECHNICAL SUPPORT"
+    }
   },
   "pages": {
     "gallery": {

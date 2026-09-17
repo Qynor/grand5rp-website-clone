@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header :class="[{'header-mobile-open': props.open}]">
     <div class="header__left">
       <a href="/">
-        <Icon name="grand-logo" />
+        <Icon :name="!props.open ? 'grand-logo' : 'grand-logo-white'"/>
       </a>
       <LanguageSwitcher />
     </div>
@@ -14,15 +14,15 @@
     <div class="header__total">
       <span>4185</span>
       <Icon name="profile" />
-      <p>Total online</p>
+      <p>{{ t("header.default.total_online") }}</p>
     </div>
     <button type="button" class="btn">
       <Icon name="walk" />
       START PLAYING
     </button>
-    <div class="header__burger">
-      <Icon name="burger-open" />
-      <Icon name="burger-close" />
+    <div class="header__burger" @click="emit('toggle')">
+      <Icon v-if="!props.open" name="burger-open" />
+      <Icon v-else="props.open" name="burger-close" />
     </div>
   </header>
 </template>
@@ -34,10 +34,14 @@ import Icon from './Icon.vue';
 const { t } = useI18n();
 
 const items = [
-  { label: t("navigation.how_to_start_playing"), value: "#howtostart" },
-  { label: t("navigation.forum"), value: "" },
-  { label: t("navigation.technical_support"), value: "" },
+  { label: t("header.navigation.how_to_start_playing"), value: "#howtostart" },
+  { label: t("header.navigation.forum"), value: "" },
+  { label: t("header.navigation.technical_support"), value: "" },
 ];
+const props = defineProps({
+  open: Boolean
+});
+const emit = defineEmits(['toggle']);
 </script>
 
 <style scoped lang="css">
@@ -93,9 +97,6 @@ header {
   font-weight: 800;
   font-size: 32px;
 }
-.burger-close {
-  display: none;
-}
 .btn {
   align-items: center;
   display: flex;
@@ -117,6 +118,9 @@ header {
 header p,
 span {
   margin: 0;
+}
+header.header-mobile-open {
+  background: #151617;
 }
 @media (max-width: 1040px) {
   .header__menu, .nav__item, .header__total, header .btn {

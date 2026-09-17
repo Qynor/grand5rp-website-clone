@@ -3,10 +3,12 @@ import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
+const navopen = ref(false);
+
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader :open="navopen" @toggle="navopen = !navopen"/>
   <AppMain />
   <AppFooter />
 </template>
