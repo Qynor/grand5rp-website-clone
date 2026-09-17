@@ -3,7 +3,7 @@ import svgLoader from 'vite-svg-loader'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   css: ['~/assets/css/global.css'],
-  modules: ['@nuxt/content', '@nuxtjs/i18n'],
+  modules: ['@nuxt/content', '@nuxtjs/i18n', '@pinia/nuxt'],
   devtools: { enabled: false },
   compatibilityDate: '2024-04-03',
   vite: {

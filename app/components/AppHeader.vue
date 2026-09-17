@@ -12,7 +12,7 @@
       </RouterLink>
     </div>
     <div class="header__total">
-      <span>4185</span>
+      <span>8922</span>
       <Icon name="profile" />
       <p>{{ t("header.default.total_online") }}</p>
     </div>
@@ -31,13 +31,19 @@
 import LanguageSwitcher from './LanguageSwitcher.vue';
 import Icon from './Icon.vue';
 import { nav__items } from '~/config/navigation.ts';
+//import { useTotalOnline } from '~/stores/useTotalOnline.js';
 
 const { t } = useI18n();
+//const total_online = useTotalOnline();
 
 const props = defineProps({
   open: Boolean
 });
 const emit = defineEmits(['toggle']);
+
+/*onMounted(() => {
+  total_online.fetchServers()
+});*/
 </script>
 
 <style scoped lang="css">
